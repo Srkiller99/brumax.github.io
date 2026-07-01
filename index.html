@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brumax | Pintura Decorativa, Fachadas y Techos en Concepción</title>
+  <meta name="description" content="Brumax: especialistas en pintura decorativa, remodelación de fachadas y construcción de techos en la Región del Biobío. Más de 14 años de experiencia entregando resultados profesionales.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Brumax | Pintura Decorativa, Fachadas y Techos">
+  <meta property="og:description" content="Especialistas en pintura decorativa, remodelación de fachadas y construcción de techos con más de 14 años de experiencia en la Región del Biobío.">
+  <meta property="og:locale" content="es_CL">
+
+  <!-- Favicon (inline neutral mark) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%231C1C1E%22/><text x=%2250%22 y=%2266%22 font-size=%2255%22 fill=%22%23B85C38%22 text-anchor=%22middle%22 font-family=%22Arial%22>B</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>/* ==========================================================================
+   BRUMAX — Landing Page
+   Tokens: bg #FFFFFF / bg-alt #F7F6F3 / ink #1C1C1E / ink-soft #6E6E73
+           accent (clay/terracotta) #B85C38 / border #E5E4E1 / dark #14130F
+   Type: Manrope (display) + Inter (body)
+   ========================================================================== */
+
+:root {
+  --color-bg: #FFFFFF;
+  --color-bg-alt: #F7F6F3;
+  --color-ink: #1C1C1E;
+  --color-ink-soft: #6E6E73;
+  --color-accent: #B85C38;
+  --color-accent-dark: #9A4B2C;
+  --color-border: #E7E5E1;
+  --color-dark: #15130F;
+  --color-dark-soft: #B9B5AC;
+
+  --font-display: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --container: 1200px;
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+
+  --shadow-soft: 0 20px 50px -25px rgba(20, 19, 15, 0.25);
+  --shadow-card: 0 10px 30px -15px rgba(20, 19, 15, 0.18);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------- Reset ---------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background: var(--color-bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+button { font: inherit; cursor: pointer; border: none; background: none; }
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- Utility ---------- */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent-dark);
+  margin-bottom: 18px;
+}
+.eyebrow--light { color: #F1EDE6; }
+
+.eyebrow__stroke {
+  width: 28px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--color-accent);
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 0.7s var(--ease);
+}
+.eyebrow__stroke--light { background: var(--color-accent); }
+.reveal.is-visible .eyebrow__stroke { transform: scaleX(1); }
+
+.section-title {
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.15;
+  max-width: 720px;
+  margin-bottom: 20px;
+}
+.section-title--light { color: #FBFAF8; }
+
+.section-lead {
+  font-size: 18px;
+  color: var(--color-ink-soft);
+  max-width: 560px;
+}
+.section-lead--light { color: var(--color-dark-soft); }
+
+.section-intro {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 32px;
+  margin-bottom: 72px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 30px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), background 0.35s var(--ease), color 0.35s var(--ease);
+  white-space: nowrap;
+}
+.btn__icon { width: 18px; height: 18px; }
+
+.btn--accent {
+  background: var(--color-accent);
+  color: #FFF8F4;
+  box-shadow: 0 12px 28px -12px rgba(184, 92, 56, 0.55);
+}
+.btn--accent:hover {
+  background: var(--color-accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px -12px rgba(184, 92, 56, 0.6);
+}
+
+.btn--ghost-light {
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(6px);
+}
+.btn--ghost-light:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+}
+
+.btn--small { padding: 12px 22px; font-size: 14px; }
+
+/* ---------- Header ---------- */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 22px 0;
+  transition: padding 0.4s var(--ease), background 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+.header__inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.header__logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  transition: color 0.4s var(--ease);
+}
+
+.header__nav {
+  display: flex;
+  gap: 36px;
+  margin-right: auto;
+  margin-left: 60px;
+}
+
+.nav-link {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.4s var(--ease);
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 0; height: 1.5px;
+  background: currentColor;
+  transition: width 0.35s var(--ease);
+}
+.nav-link:hover::after { width: 100%; }
+
+.header__cta { flex-shrink: 0; }
+
+.header__burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 6px;
+}
+.header__burger span {
+  width: 22px; height: 2px;
+  background: #FFFFFF;
+  border-radius: 2px;
+  transition: background 0.4s var(--ease), transform 0.3s var(--ease), opacity 0.3s var(--ease);
+}
+
+/* Scrolled state */
+.header.is-scrolled {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 var(--color-border), 0 12px 30px -20px rgba(20,19,15,0.2);
+  padding: 14px 0;
+}
+.header.is-scrolled .header__logo { color: var(--color-ink); }
+.header.is-scrolled .nav-link { color: var(--color-ink-soft); }
+.header.is-scrolled .nav-link:hover { color: var(--color-ink); }
+.header.is-scrolled .header__burger span { background: var(--color-ink); }
+
+/* Mobile menu */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 28px;
+  padding: 32px 40px;
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.5s var(--ease), opacity 0.4s var(--ease);
+}
+.mobile-menu.is-open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+.mobile-menu__link {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+.mobile-menu__cta { margin-top: 12px; }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 140px 32px 100px;
+  overflow: hidden;
+}
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.08);
+  will-change: transform;
+}
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(15,14,11,0.55) 0%, rgba(15,14,11,0.35) 40%, rgba(15,14,11,0.75) 100%);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.hero__title {
+  font-size: clamp(38px, 6vw, 68px);
+  line-height: 1.08;
+  margin-bottom: 24px;
+  color: #FFFFFF;
+}
+
+.hero__subtitle {
+  font-size: clamp(16px, 1.6vw, 19px);
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 560px;
+  margin: 0 auto 40px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero__scroll {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  width: 26px;
+  height: 44px;
+  border: 1.5px solid rgba(255,255,255,0.55);
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+}
+.hero__scroll-line {
+  width: 3px;
+  height: 8px;
+  border-radius: 2px;
+  background: #FFFFFF;
+  animation: scrollDown 1.8s infinite;
+}
+@keyframes scrollDown {
+  0% { opacity: 1; transform: translateY(0); }
+  70% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 0; transform: translateY(10px); }
+}
+
+/* ---------- Reveal-on-scroll base ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.hero__content .reveal { transition-delay: calc(var(--d, 0) * 0.12s); }
+.hero__content .reveal:nth-child(1) { --d: 0; }
+.hero__content .reveal:nth-child(2) { --d: 1; }
+.hero__content .reveal:nth-child(3) { --d: 2; }
+.hero__content .reveal:nth-child(4) { --d: 3; }
+.hero__content { opacity: 1; }
+.hero__content .reveal { opacity: 0; }
+.hero__content .reveal.is-visible { opacity: 1; }
+
+/* ---------- Services ---------- */
+.services {
+  padding: 140px 0 40px;
+  background: var(--color-bg);
+}
+
+.service {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 80px;
+  margin-bottom: 150px;
+}
+.service:last-child { margin-bottom: 0; }
+
+.service--reverse { direction: rtl; }
+.service--reverse > * { direction: ltr; }
+
+.service__media {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  aspect-ratio: 4 / 3.1;
+}
+.service__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s var(--ease);
+}
+.service:hover .service__media img { transform: scale(1.045); }
+
+.service__text { max-width: 460px; }
+
+.service__index {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-accent-dark);
+  margin-bottom: 14px;
+}
+
+.service__text h3 {
+  font-size: clamp(24px, 2.6vw, 32px);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.service__text p {
+  color: var(--color-ink-soft);
+  font-size: 16.5px;
+  margin-bottom: 22px;
+}
+
+.text-link {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--color-ink);
+  border-bottom: 1.5px solid var(--color-accent);
+  padding-bottom: 3px;
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease), letter-spacing 0.3s var(--ease);
+}
+.text-link:hover { color: var(--color-accent-dark); letter-spacing: 0.01em; }
+
+/* ---------- About ---------- */
+.about {
+  max-width: var(--container);
+  margin: 60px auto 160px;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about__media {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  aspect-ratio: 4 / 5;
+}
+.about__media img { width: 100%; height: 100%; object-fit: cover; }
+
+.about__text p {
+  color: var(--color-ink-soft);
+  font-size: 16.5px;
+  margin-bottom: 16px;
+  max-width: 560px;
+}
+
+.about__stats {
+  display: flex;
+  gap: 48px;
+  margin-top: 36px;
+  padding-top: 32px;
+  border-top: 1px solid var(--color-border);
+}
+.stat { display: flex; flex-direction: column; gap: 4px; }
+.stat__number {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--color-accent);
+}
+.stat__label {
+  font-size: 13.5px;
+  color: var(--color-ink-soft);
+}
+
+/* ---------- Contact ---------- */
+.contact {
+  background: var(--color-dark);
+  padding: 140px 32px;
+  position: relative;
+  overflow: hidden;
+}
+.contact::before {
+  content: "";
+  position: absolute;
+  top: -30%; right: -10%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(184,92,56,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.contact__inner {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+.contact__inner .eyebrow { justify-content: center; }
+
+.contact__card {
+  margin-top: 56px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  backdrop-filter: blur(10px);
+}
+
+.contact__option {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: #FBFAF8;
+}
+.contact__option h3 { color: #FBFAF8; font-size: 19px; }
+.contact__option p { color: var(--color-dark-soft); font-size: 14.5px; margin-bottom: 10px; }
+
+.contact__icon {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: rgba(184, 92, 56, 0.15);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+.contact__icon svg { width: 22px; height: 22px; }
+
+.contact__divider {
+  width: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 0 40px;
+}
+
+.contact__location {
+  margin-top: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-dark-soft);
+  font-size: 14.5px;
+}
+.contact__location-icon svg { width: 16px; height: 16px; }
+
+/* ---------- Footer ---------- */
+.footer {
+  background: #FBFAF8;
+  border-top: 1px solid var(--color-border);
+  padding: 72px 32px 28px;
+}
+.footer__inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 44px;
+}
+
+.footer__logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 22px;
+  display: block;
+  margin-bottom: 12px;
+}
+.footer__brand p { color: var(--color-ink-soft); font-size: 14.5px; max-width: 240px; }
+
+.footer__heading {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  margin-bottom: 16px;
+}
+.footer__services li,
+.footer__contact p {
+  color: var(--color-ink);
+  font-size: 14.5px;
+  margin-bottom: 9px;
+}
+.footer__contact a {
+  display: inline-block;
+  margin-top: 4px;
+  font-weight: 600;
+  color: var(--color-accent-dark);
+}
+
+.footer__bottom {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border);
+  font-size: 13px;
+  color: var(--color-ink-soft);
+}
+
+/* ---------- Floating action button (mobile) ---------- */
+.fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 90;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #FFF8F4;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 14px 30px -10px rgba(184, 92, 56, 0.55);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
+}
+.fab svg { width: 24px; height: 24px; }
+.fab.is-visible { opacity: 1; transform: translateY(0); }
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 980px) {
+  .header__nav { display: none; }
+  .header__cta { display: none; }
+  .header__burger { display: flex; }
+
+  .service,
+  .about {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .service--reverse { direction: ltr; }
+  .service__text { max-width: 100%; }
+  .about__media { max-width: 420px; }
+
+  .contact__card { flex-direction: column; padding: 36px; gap: 32px; }
+  .contact__divider { width: 100%; height: 1px; margin: 0; }
+
+  .fab { display: flex; }
+}
+
+@media (max-width: 640px) {
+  .header__inner { padding: 0 20px; }
+  .hero { padding: 120px 20px 90px; }
+  .hero__actions { flex-direction: column; width: 100%; }
+  .hero__actions .btn { width: 100%; }
+
+  .services { padding: 90px 0 20px; }
+  .service { margin-bottom: 100px; padding: 0 20px; }
+  .section-intro { padding: 0 20px; margin-bottom: 52px; }
+
+  .about { margin: 20px auto 100px; padding: 0 20px; }
+  .about__stats { gap: 28px; flex-wrap: wrap; }
+
+  .contact { padding: 100px 20px; }
+  .footer { padding: 56px 20px 24px; }
+  .footer__inner { grid-template-columns: 1fr; gap: 32px; }
+}
+</style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="#inicio" class="header__logo">Brumax</a>
+
+      <nav class="header__nav" id="nav">
+        <a href="#inicio" class="nav-link">Inicio</a>
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#nosotros" class="nav-link">Sobre Nosotros</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </nav>
+
+      <a href="#contacto" class="btn btn--accent btn--small header__cta">Solicitar Cotización</a>
+
+      <button class="header__burger" id="burger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#inicio" class="mobile-menu__link">Inicio</a>
+    <a href="#servicios" class="mobile-menu__link">Servicios</a>
+    <a href="#nosotros" class="mobile-menu__link">Sobre Nosotros</a>
+    <a href="#contacto" class="mobile-menu__link">Contacto</a>
+    <a href="#contacto" class="btn btn--accent mobile-menu__cta">Solicitar Cotización</a>
+  </div>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="inicio">
+      <div class="hero__media">
+        <img
+          src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1800&q=80"
+          alt="Pintor profesional aplicando pintura decorativa en una pared"
+          class="hero__img"
+          fetchpriority="high"
+        >
+        <div class="hero__overlay"></div>
+      </div>
+
+      <div class="hero__content">
+        <p class="eyebrow eyebrow--light reveal">Concepción · Región del Biobío</p>
+        <h1 class="hero__title reveal">Pintura decorativa que transforma espacios</h1>
+        <p class="hero__subtitle reveal">Especialistas en pintura decorativa, remodelación de fachadas y construcción de techos, con más de 14 años de experiencia entregando resultados profesionales en la Región del Biobío.</p>
+
+        <div class="hero__actions reveal">
+          <a href="mailto:correo@brumax.cl?subject=Cotizaci%C3%B3n%20Brumax&body=Hola%20Brumax%2C%0D%0A%0D%0AQuiero%20consultar%20por...%0D%0A%0D%0AMuchas%20gracias." class="btn btn--accent">Solicitar Cotización</a>
+          <a href="https://wa.me/56900000000?text=Hola%20Brumax%2C%20quiero%20consultar%20por..." target="_blank" rel="noopener" class="btn btn--ghost-light">
+            <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.14c-.24.68-1.4 1.31-1.93 1.39-.5.08-1.12.11-1.8-.11-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.17-1.55-1.17-2.96 0-1.41.74-2.1 1-2.39.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.14.07.14.12.31.02.5-.1.19-.15.31-.29.48-.14.17-.3.37-.43.5-.14.14-.29.29-.13.57.17.29.75 1.24 1.61 2.01 1.11 1 2.04 1.31 2.33 1.46.29.14.46.12.63-.07.17-.19.72-.84.92-1.13.19-.29.38-.24.64-.14.26.1 1.68.79 1.97.94.29.14.48.21.55.33.07.12.07.7-.17 1.38z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <a href="#servicios" class="hero__scroll" aria-label="Bajar a servicios">
+        <span class="hero__scroll-line"></span>
+      </a>
+    </section>
+
+    <!-- ===== SERVICIOS ===== -->
+    <section class="services" id="servicios">
+      <div class="section-intro">
+        <p class="eyebrow reveal"><span class="eyebrow__stroke"></span>Lo que hacemos</p>
+        <h2 class="section-title reveal">Cada superficie cuenta una historia de cuidado y precisión</h2>
+        <p class="section-lead reveal">Desde el primer trazo de pintura hasta la última teja instalada, trabajamos con procesos claros, materiales confiables y terminaciones que se notan.</p>
+      </div>
+
+      <!-- Servicio 1 -->
+      <article class="service" id="pintura-decorativa">
+        <div class="service__media reveal">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80" alt="Aplicación de pintura decorativa en muro interior">
+        </div>
+        <div class="service__text reveal">
+          <span class="service__index">Pintura Decorativa</span>
+          <h3>Color y textura pensados para cada ambiente</h3>
+          <p>Combinamos técnicas decorativas, texturas y acabados especiales para dar personalidad a interiores y exteriores. Cada proyecto se planifica según la luz, el uso del espacio y el estilo que buscas.</p>
+          <a href="mailto:correo@brumax.cl?subject=Cotizaci%C3%B3n%20Brumax&body=Hola%20Brumax%2C%0D%0A%0D%0AQuiero%20consultar%20por%20Pintura%20Decorativa...%0D%0A%0D%0AMuchas%20gracias." class="text-link">Consultar por este servicio →</a>
+        </div>
+      </article>
+
+      <!-- Servicio 2 -->
+      <article class="service service--reverse" id="fachadas">
+        <div class="service__media reveal">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Fachada de vivienda renovada con pintura moderna">
+        </div>
+        <div class="service__text reveal">
+          <span class="service__index">Mejoramiento de Fachadas</span>
+          <h3>La primera impresión de tu propiedad</h3>
+          <p>Renovamos fachadas residenciales y comerciales combinando protección, durabilidad y estética. Trabajamos con sistemas y pinturas preparadas para el clima de la región.</p>
+          <a href="mailto:correo@brumax.cl?subject=Cotizaci%C3%B3n%20Brumax&body=Hola%20Brumax%2C%0D%0A%0D%0AQuiero%20consultar%20por%20Mejoramiento%20de%20Fachadas...%0D%0A%0D%0AMuchas%20gracias." class="text-link">Consultar por este servicio →</a>
+        </div>
+      </article>
+
+      <!-- Servicio 3 -->
+      <article class="service" id="mejoramiento-techos">
+        <div class="service__media reveal">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1622015663084-307d19eabbbf?auto=format&fit=crop&w=1200&q=80" alt="Mejoramiento de techumbre en vivienda">
+        </div>
+        <div class="service__text reveal">
+          <span class="service__index">Mejoramiento de Techos</span>
+          <h3>Más vida útil para tu techumbre</h3>
+          <p>Aplicamos tratamientos, sellos e impermeabilizantes que prolongan la vida de tu techo y previenen filtraciones antes de que se conviertan en un problema mayor.</p>
+          <a href="mailto:correo@brumax.cl?subject=Cotizaci%C3%B3n%20Brumax&body=Hola%20Brumax%2C%0D%0A%0D%0AQuiero%20consultar%20por%20Mejoramiento%20de%20Techos...%0D%0A%0D%0AMuchas%20gracias." class="text-link">Consultar por este servicio →</a>
+        </div>
+      </article>
+
+      <!-- Servicio 4 -->
+      <article class="service service--reverse" id="reparacion-techos">
+        <div class="service__media reveal">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1632759145355-8a99b6a3d15b?auto=format&fit=crop&w=1200&q=80" alt="Reparación de techo con tejas nuevas">
+        </div>
+        <div class="service__text reveal">
+          <span class="service__index">Reparación de Techos</span>
+          <h3>Soluciones rápidas y duraderas</h3>
+          <p>Diagnosticamos y reparamos filtraciones, tejas dañadas y estructuras comprometidas, devolviendo la seguridad y hermeticidad que tu techo necesita.</p>
+          <a href="mailto:correo@brumax.cl?subject=Cotizaci%C3%B3n%20Brumax&body=Hola%20Brumax%2C%0D%0A%0D%0AQuiero%20consultar%20por%20Reparaci%C3%B3n%20de%20Techos...%0D%0A%0D%0AMuchas%20gracias." class="text-link">Consultar por este servicio →</a>
+        </div>
+      </article>
+
+      <!-- Servicio 5 -->
+      <article class="service" id="cambio-techos">
+        <div class="service__media reveal">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1620641622569-90ca7ba0cc76?auto=format&fit=crop&w=1200&q=80" alt="Cambio completo de cubierta de techo">
+        </div>
+        <div class="service__text reveal">
+          <span class="service__index">Cambio de Techos</span>
+          <h3>Renovación completa de cubierta</h3>
+          <p>Cuando la reparación ya no es suficiente, realizamos el cambio total de la cubierta con materiales certificados y un proceso ordenado de principio a fin.</p>
+          <a href="mailto:correo@brumax.cl?subject=Cotizaci%C3%B3n%20Brumax&body=Hola%20Brumax%2C%0D%0A%0D%0AQuiero%20consultar%20por%20Cambio%20de%20Techos...%0D%0A%0D%0AMuchas%20gracias." class="text-link">Consultar por este servicio →</a>
+        </div>
+      </article>
+
+      <!-- Servicio 6 -->
+      <article class="service service--reverse" id="construccion-techos">
+        <div class="service__media reveal">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80" alt="Construcción de estructura de techo nueva">
+        </div>
+        <div class="service__text reveal">
+          <span class="service__index">Construcción de Techos</span>
+          <h3>Estructuras nuevas, hechas para durar</h3>
+          <p>Diseñamos y construimos techumbres nuevas para ampliaciones y proyectos desde cero, con una estructura sólida y terminaciones a la altura del resto de tu propiedad.</p>
+          <a href="mailto:correo@brumax.cl?subject=Cotizaci%C3%B3n%20Brumax&body=Hola%20Brumax%2C%0D%0A%0D%0AQuiero%20consultar%20por%20Construcci%C3%B3n%20de%20Techos...%0D%0A%0D%0AMuchas%20gracias." class="text-link">Consultar por este servicio →</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== SOBRE NOSOTROS ===== -->
+    <section class="about" id="nosotros">
+      <div class="about__media reveal">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80" alt="Equipo Brumax trabajando en una obra">
+      </div>
+      <div class="about__text reveal">
+        <p class="eyebrow"><span class="eyebrow__stroke"></span>Sobre Nosotros</p>
+        <h2 class="section-title">14 años construyendo confianza, un proyecto a la vez</h2>
+        <p>Somos Brumax, una empresa de la Región del Biobío con sede en Concepción. Durante más de 14 años hemos trabajado en proyectos residenciales y comerciales entregando soluciones profesionales en pintura decorativa, remodelación de fachadas y construcción de techos.</p>
+        <p>Nuestro compromiso es ofrecer trabajos de excelente calidad, utilizando materiales confiables, terminaciones impecables y una atención cercana para cada cliente.</p>
+        <p>Creemos que cada proyecto debe mejorar la imagen, el valor y la durabilidad de cada propiedad. Nuestra prioridad es cumplir los plazos, mantener una comunicación transparente y entregar resultados que superen las expectativas de quienes confían en nosotros.</p>
+
+        <div class="about__stats">
+          <div class="stat">
+            <span class="stat__number">14+</span>
+            <span class="stat__label">Años de experiencia</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number">6</span>
+            <span class="stat__label">Servicios especializados</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number">100%</span>
+            <span class="stat__label">Región del Biobío</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section class="contact" id="contacto">
+      <div class="contact__inner">
+        <p class="eyebrow eyebrow--light reveal"><span class="eyebrow__stroke eyebrow__stroke--light"></span>Hablemos de tu proyecto</p>
+        <h2 class="section-title section-title--light reveal">Solicita tu cotización</h2>
+        <p class="section-lead section-lead--light reveal">Cuéntanos qué necesitas y te responderemos a la brevedad. Sin compromiso.</p>
+
+        <div class="contact__card reveal">
+          <div class="contact__option">
+            <div class="contact__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5h15A1.5 1.5 0 0 1 21 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11z"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg>
+            </div>
+            <h3>Correo electrónico</h3>
+            <p>correo@brumax.cl</p>
+            <a class="btn btn--accent btn--small" href="mailto:correo@brumax.cl?subject=Cotizaci%C3%B3n%20Brumax&body=Hola%20Brumax%2C%0D%0A%0D%0AQuiero%20consultar%20por...%0D%0A%0D%0AMuchas%20gracias.">Enviar Correo</a>
+          </div>
+
+          <div class="contact__divider" aria-hidden="true"></div>
+
+          <div class="contact__option">
+            <div class="contact__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2z"/></svg>
+            </div>
+            <h3>WhatsApp</h3>
+            <p>Respuesta rápida, directo a tu celular</p>
+            <a class="btn btn--accent btn--small" href="https://wa.me/56900000000?text=Hola%20Brumax%2C%20quiero%20consultar%20por..." target="_blank" rel="noopener">Escribir por WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="contact__location reveal">
+          <span class="contact__location-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-6.2-7-11.2A7 7 0 0 1 19 9.8C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.3"/></svg>
+          </span>
+          Concepción · Región del Biobío · Chile
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo">Brumax</span>
+        <p>Pintura decorativa, fachadas y techos en la Región del Biobío.</p>
+      </div>
+
+      <div class="footer__services">
+        <span class="footer__heading">Especialistas en</span>
+        <ul>
+          <li>Pintura Decorativa</li>
+          <li>Mejoramiento de Fachadas</li>
+          <li>Mejoramiento de Techos</li>
+          <li>Reparación de Techos</li>
+          <li>Cambio de Techos</li>
+          <li>Construcción de Techos</li>
+        </ul>
+      </div>
+
+      <div class="footer__contact">
+        <span class="footer__heading">Contacto</span>
+        <p>Concepción, Región del Biobío, Chile</p>
+        <a href="mailto:correo@brumax.cl">correo@brumax.cl</a>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© 2026 Brumax. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <a href="#contacto" class="fab" id="fab" aria-label="Solicitar cotización">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5h15A1.5 1.5 0 0 1 21 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11z"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg>
+  </a>
+
+  <script>/* ==========================================================================
+   BRUMAX — script.js
+   Header on scroll, mobile menu, scroll-reveal animations, hero parallax,
+   floating action button.
+   ========================================================================== */
+
+(function () {
+  'use strict';
+
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Header: solid background on scroll ---------- */
+  var header = document.getElementById('header');
+  var fab = document.getElementById('fab');
+  var heroHeight = document.querySelector('.hero') ? document.querySelector('.hero').offsetHeight : 600;
+
+  function onScroll() {
+    var y = window.scrollY || window.pageYOffset;
+
+    if (header) {
+      if (y > 40) {
+        header.classList.add('is-scrolled');
+      } else {
+        header.classList.remove('is-scrolled');
+      }
+    }
+
+    if (fab) {
+      if (y > heroHeight * 0.6) {
+        fab.classList.add('is-visible');
+      } else {
+        fab.classList.remove('is-visible');
+      }
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ---------- Mobile menu ---------- */
+  var burger = document.getElementById('burger');
+  var mobileMenu = document.getElementById('mobileMenu');
+
+  function toggleMenu(forceClose) {
+    var isOpen = mobileMenu.classList.contains('is-open');
+    var next = forceClose ? false : !isOpen;
+
+    mobileMenu.classList.toggle('is-open', next);
+    burger.setAttribute('aria-expanded', String(next));
+    document.body.style.overflow = next ? 'hidden' : '';
+  }
+
+  if (burger && mobileMenu) {
+    burger.addEventListener('click', function () { toggleMenu(); });
+
+    var mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(function (link) {
+      link.addEventListener('click', function () { toggleMenu(true); });
+    });
+  }
+
+  /* ---------- Scroll reveal ---------- */
+  var revealEls = document.querySelectorAll('.reveal');
+
+  if ('IntersectionObserver' in window && !prefersReducedMotion) {
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.18, rootMargin: '0px 0px -8% 0px' }
+    );
+
+    revealEls.forEach(function (el) { observer.observe(el); });
+  } else {
+    // Fallback: show everything immediately.
+    revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  /* ---------- Subtle hero parallax ---------- */
+  var heroImg = document.querySelector('.hero__img');
+
+  if (heroImg && !prefersReducedMotion) {
+    var ticking = false;
+
+    function updateParallax() {
+      var y = window.scrollY || window.pageYOffset;
+      var offset = Math.min(y * 0.12, 60);
+      heroImg.style.transform = 'scale(1.08) translateY(' + offset + 'px)';
+      ticking = false;
+    }
+
+    window.addEventListener(
+      'scroll',
+      function () {
+        if (!ticking) {
+          window.requestAnimationFrame(updateParallax);
+          ticking = true;
+        }
+      },
+      { passive: true }
+    );
+  }
+
+  /* ---------- Smooth anchor scrolling with header offset ---------- */
+  var anchorLinks = document.querySelectorAll('a[href^="#"]');
+
+  anchorLinks.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var targetId = link.getAttribute('href');
+      if (targetId.length <= 1) return;
+
+      var target = document.querySelector(targetId);
+      if (!target) return;
+
+      e.preventDefault();
+      var headerOffset = 88;
+      var top = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: top,
+        behavior: prefersReducedMotion ? 'auto' : 'smooth'
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
